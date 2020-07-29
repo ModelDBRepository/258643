@@ -1,0 +1,18 @@
+load_file("stdrun.hoc")                                                                                                          
+load_file("import3d.hoc")
+objref imorphology
+imorphology = new Import3d_SWC_read()
+imorphology.input("4dend_1axon_ais.swc")
+objref morphology_importer                                                                                                       
+morphology_importer = new Import3d_GUI(imorphology, 0)
+objref cell
+morphology_importer.instantiate(cell)
+xopen("spiketest.hoc")
+xopen("setup_pars.hoc")
+
+xopen("funcs.hoc")
+
+param_set = 0
+set_params(param_set)
+xopen("da.ses")
+

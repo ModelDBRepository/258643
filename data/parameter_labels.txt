@@ -1,0 +1,16 @@
+Gbar NaT
+Gbar NaT (axon scaling factor)
+Vhalf NaT
+Vhalf h shift NaT
+Vhalf hs shift NaT
+Vhalf axon shift NaT
+Tau modifier NaT
+Gbar KDR
+Gbar KDR (axon scaling factor (also multiplied by Gbar NaT (axon scaling factor)))
+Vhalf KDR
+Tau modifier KDR
+Gbar BK
+Vhalf BK
+Tau modifier BK
+Amplitude prediciting coefficient (APC) metaparameter (see metap.hoc)
+Frequency prediciting coefficient (FPC) metaparameter (see metap.hoc)

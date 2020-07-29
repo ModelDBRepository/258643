@@ -1,0 +1,15 @@
+{xopen("metap.hoc")}
+forsec "axon" gbar_kv4_a = 0.0
+forsec "axon" gbar_kerg = 0.0
+forsec "axon" gbar_cal = 0.0
+forsec "axon" gbar_cat = 0.0
+forsec "axon" gbar_sk = 0.0
+forsec "apic" gbar_kv4_a = 0.0
+forsec "apic" gbar_kerg = 0.0
+forsec "apic" gbar_cal = 0.0
+forsec "apic" gbar_cat = 0.0
+forsec "apic" gbar_sk = 0.0
+forsec "apic" gbar_nat = gbar_nat * gax_nat
+forsec "apic" vh_shift_nat = vhm_ax_nat
+forsec "apic" gbar_kv2_dr = gbar_kv2_dr * ( gax_nat * gax_kv2_dr )
+

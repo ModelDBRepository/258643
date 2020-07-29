@@ -1,0 +1,26 @@
+forall{insert leak}
+forall{insert kv4_a}
+forall{insert cat}
+forall{insert cal}
+forall{insert cad}
+forall{insert sk}
+forall{insert kerg}
+forall{insert nat}
+forall{insert kv2_dr}
+forall{insert bk}
+forall{insert hcn}
+forall{insert metap}
+
+celsius=32
+forall{Ra=100}
+forall{cm=0.75}
+
+forall{ek = -105.49743}
+forall{ena = 50}
+
+apc_metap = 0
+fpc_metap = 0
+
+steps_per_ms = 20
+setdt(steps_per_ms)
+dt=0.05

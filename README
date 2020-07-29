@@ -1,0 +1,87 @@
+Substantia Nigra pars Compacta Dopamine Neuron model
+with multiple parameter sets
+from
+Rumbell and Kozloski (2019)
+
+*** Simulate the Dopamine neuron model ***
+
+Start a Neuron simulation of the model by:
+- Compile ion channel .mod files in mechanisms/ ("nrnivmodl mechanisms")
+- run demo ("nrngui da.hoc")
+- Run a spontaneous firing protocol with 'Init and Run'
+- select a parameter set within the 'Choose parameter set' window:
+    - parameter set number 0--729
+    - Can select Set Parameters, Spikes On, or Spikes Off either before or during a simulation
+    - Spikes On and Spikes Off toggle Nat, KDR and BK conductances to 0, or to the parameter set chosen
+
+
+*** Use the optimization tool ***
+
+Use the files in bluepyopt_ext to set up the Non-Dominated Sorting Differential Evolution with Feature-based crowdedness function
+within the 'bluepyopt' optimization framework.
+
+- Download and install required python packages:
+    - DEAP (git clone https://github.com/DEAP/deap.git)
+        - Install (e.g. python setup.py install)
+    - BluePyOpt (git clone https://github.com/BlueBrain/BluePyOpt.git)
+        - copy contents of 'bluepyopt_ext' to 'bluepyopt/bluepyopt/'
+            - replaces these files, adding functionality to perform the new algorithm:
+                - ephys/evaluators.py
+                - ephys/objectives.py
+                - ephys/objectivescalculators.py
+                - deapext/algorithms.py
+                - deapext/optimisations.py
+                - deapext/tools/__init__.py
+            - adds these files:
+                - deapext/tools/varDE.py
+                - deapext/tools/selNSGA2_featcrowd.py
+        - Install (e.g. python setup.py install)
+    - eFEL (git clone https://github.com/eFEL/eFEL.git)
+        - Install (e.g. python setup.py install)
+
+- To use the NSDE w/ Feature Crowdedness Function optimization algorithm, simply declare it as the 'optimisation' object in a BluePyOpt optimization. For example, in the bluepyopt/examples/l5pc/opt_l5pc.py file, the opt object is set up as:
+
+      opt = bluepyopt.optimisations.DEAPOptimisation(
+          evaluator=evaluator,
+          map_function=map_function,
+          seed=seed)
+
+    - replace this with the following to use the new algorithm:
+
+          opt = bluepyopt.deapext.optimisations.NSDEwFeatCrowdOptimisation(
+              evaluator=evaluator,
+              map_function=map_function,
+              seed=seed,
+              cxpb=1.0,
+              jitter=0.1,
+              numSDs=2
+          )
+
+    - The parameters 'cxpb', 'jitter' and 'numSDs' are used in 'deapext/tools/varDE' and deapext/tools/selNSGA2_featcrowd'
+    - Another parameter that can be passed to the optimization initialization is 'featsToUse', which is a list of strings that are the names of features to include in the crowdedness function. This defaults to an empty list, which means use all features.
+    - A further parameter that can be passed is 'h5_filename', which will save 'parameters, 'errors' and 'features' every generation in hdf5 format
+    - Run L5pc example using:
+        - python opt_l5pc.py --start --offspring-size=10
+            (Note: offspring-size parameter defaults to 2 in l5pc example, so must be passed as it has to be >3 for this algorithm)
+
+
+*** Data used in the paper ***
+
+- The files 'params.txt' and 'features.txt' are space-delimited files, each 729 lines long, listing one 'good' model from the paper per line
+- A line in params.txt corresponds to the same line number in features.txt
+- The column labels for parameters and features are written in param_labels.txt and feature_labels.txt
+- These files can be loaded into e.g. Matlab, and analysis from the paper can be performed.
+    - e.g. try using:
+    pars = dlmread('params.txt');
+    feats = dlmread('features.txt'):
+    [Z_pars, Z_pars_mu, Z_pars_sigma] = zscore(pars);
+    [Xloadings, Yloadings, Xscores, Yscores, beta, PLSPctVar] = plsregress(...
+        (Z_pars, feats, 16);
+    yfitPLS = [ones(size(Z_pars),1) Z_pars]*beta;
+
+    This will perform the PLS regression, and get the 'beta' coefficients (e.g. Figures 4C-D, 6C) for each spiking feature
+
+*** For questions/problems ***
+Please contact Tim Rumbell
+thrumbel@us.ibm.com
+timrumbell@gmail.com

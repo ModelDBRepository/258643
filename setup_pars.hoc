@@ -1,0 +1,67 @@
+// objref gbar_leak_vec, e_leak_vec, gbar_hcn_vec, Vhalf_hcn_vec, ehcn_hcn_vec, gbar_kv4_a_vec, Vhalf_kv4_a_vec, taumod_kv4_a_vec, gbar_kerg_vec, Vhalf_kerg_vec, taumod_kerg_vec, gbar_cat_vec, Vhalf_cat_vec, taumod_cat_vec, gbar_cal_vec, Vhalf_cal_vec, taumod_cal_vec, kf_cal_vec, Pmax_cad_vec, beta_cad_vec, gbar_sk_vec, km_sk_vec
+
+objref gbar_nat_vec, gax_nat_vec, vhh_shift_nat_vec, vhhs_shift_nat_vec, Vhalf_nat_vec, vhm_ax_nat_vec, taumod_nat_vec, gbar_kv2_dr_vec, gax_kv2_dr_vec, Vhalf_kv2_dr_vec, taumod_kv2_dr_vec, gbar_bk_vec, Vhalf_bk_vec, taumod_bk_vec, apc_metap_vec, fpc_metap_vec
+
+gbar_nat_vec    = new Vector()
+gax_nat_vec    = new Vector()
+Vhalf_nat_vec    = new Vector()
+vhh_shift_nat_vec       = new Vector()
+vhhs_shift_nat_vec       = new Vector()
+vhm_ax_nat_vec       = new Vector()
+taumod_nat_vec    = new Vector()
+gbar_kv2_dr_vec    = new Vector()
+gax_kv2_dr_vec    = new Vector()
+Vhalf_kv2_dr_vec    = new Vector()
+taumod_kv2_dr_vec    = new Vector()
+gbar_bk_vec    = new Vector()
+Vhalf_bk_vec    = new Vector()
+taumod_bk_vec    = new Vector()
+apc_metap_vec       = new Vector()
+fpc_metap_vec       = new Vector()
+
+objref paramfile
+paramfile=new File()
+paramfile.ropen("params.txt")
+
+for i=1,727 {
+    gbar_nat_vec.append(      paramfile.scanvar)
+    gax_nat_vec.append(       paramfile.scanvar)
+    Vhalf_nat_vec.append(     paramfile.scanvar)
+    vhh_shift_nat_vec.append( paramfile.scanvar)
+    vhhs_shift_nat_vec.append(paramfile.scanvar)
+    vhm_ax_nat_vec.append(    paramfile.scanvar)
+    taumod_nat_vec.append(    paramfile.scanvar)
+    gbar_kv2_dr_vec.append(   paramfile.scanvar)
+    gax_kv2_dr_vec.append(    paramfile.scanvar)
+    Vhalf_kv2_dr_vec.append(  paramfile.scanvar)
+    taumod_kv2_dr_vec.append( paramfile.scanvar)
+    gbar_bk_vec.append(       paramfile.scanvar)
+    Vhalf_bk_vec.append(      paramfile.scanvar)
+    taumod_bk_vec.append(     paramfile.scanvar)
+    apc_metap_vec.append(     paramfile.scanvar)
+    fpc_metap_vec.append(     paramfile.scanvar)
+}
+
+
+
+
+
+
+
+// gbar_nat_vec.append(      0.033122,0.038558,0.026146,0.021509,0.030225,0.01628,0.018951,0.032256,0.040747,0.023211, 0.0105, 0.0251      )
+// gax_nat_vec.append(       30.963,56.747,16.116,10.803,10.303,21.308,12.613,24.076,24.441,12.506,15.7917,17.0701     )
+// Vhalf_nat_vec.append(     -22.911,-21.86,-23.663,-27.335,-24.052,-24.86,-27.77,-24.499,-24.531,-25.751,-28.3323,-28.5002      )
+// vhh_shift_nat_vec.append( -5.4024,-5.8413,-3.1969,-7.3803,-8.9929,5.0491,2.5649,-8.5104,-9.6196,-0.13357,3.1836,-6.4482        )
+// vhhs_shift_nat_vec.append(-2.9963,-7.3533,-4.8191,-0.66193,-0.78793,-2.9798,-2.3593,-1.6448,-0.70876,-4.4994,0.3066,-1.4543        )
+// vhm_ax_nat_vec.append(    -9.715,-8.2622,-8.9197,-9.8096,-9.9166,-9.5987,-8.6277,-8.3481,-9.9896,-9.3581,-7.6662,-9.335        )
+// taumod_nat_vec.append(    1.4307,1.4147,1.499,1.1892,1.3017,1.2862,1.4692,1.3656,1.1924,1.4644,1.4173,1.4509      )
+// gbar_kv2_dr_vec.append(   0.0010694,0.0022034,0.0059327,0.0091368,0.0060698,0.0026817,0.017299,0.002054,0.0044309,0.017068,6.8232e-4,0.0053      )
+// gax_kv2_dr_vec.append(    0.43428,0.62107,0.14834,0.51618,0.98661,0.29765,0.66437,0.64367,0.28117,0.0041112,0.2814,0.1232     )
+// Vhalf_kv2_dr_vec.append(  -25.319,-23.391,-22.767,-20.851,-20.649,-22.345,-20.905,-26.693,-20.76,-21.603,-22.966,-26.8829        )
+// taumod_kv2_dr_vec.append( 1.0937,1.1024,0.8892,1.2657,1.4066,0.80109,1.0533,1.4846,1.4568,1.0365,0.7099,1.0307        )
+// gbar_bk_vec.append(       0.00041755,0.00043548,0.00057642,0.00048154,0.00041013,0.00039328,0.00062803,0.00045186,0.00065534,0.00063031,0.0006287,0.00042846     )
+// Vhalf_bk_vec.append(      -12.432,-8.8099,-8.272,-7.4476,-8.3241,-5.7036,-8.2511,-9.2262,-9.3542,-5.5451,-11.9978,-8.3675        )
+// taumod_bk_vec.append(     0.62761,0.72274,0.51504,1.4042,0.71068,0.93903,0.62304,0.71012,0.55533,0.63832,0.7553,0.7325        )
+// apc_metap_vec.append(     0.0082862,-0.18713,0.17402,-0.014809,-0.28185,-0.1145,-0.27046,-0.10708,0.035958,-0.15531,-0.0465,-0.2053     )
+// fpc_metap_vec.append(     0.19656,-0.21381,0.46185,0.063784,-0.29797,0.018124,-0.31283,-0.18052,0.15041,-0.25427,0.3083,-0.4433        )
+// 

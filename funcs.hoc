@@ -1,0 +1,44 @@
+proc spikes_off() {
+    forall{gbar_nat = 0}
+    forall{gbar_kv2_dr = 0}
+    forall{gbar_bk = 0}
+}
+
+proc spikes_on() {
+    set_num = $1
+
+    forall {gbar_nat = gbar_nat_vec.x(set_num)}
+    forsec "apic" vh_shift_nat = vhm_ax_nat_vec.x(set_num)
+
+    forall {gbar_kv2_dr = gbar_kv2_dr_vec.x(set_num)}
+    forsec "apic" gbar_kv2_dr = gbar_kv2_dr * (gax_nat_vec.x(set_num) * gax_kv2_dr_vec.x(set_num))
+
+    forall{gbar_bk = gbar_bk_vec.x(set_num)}
+
+}
+
+proc set_params() {
+    set_num = $1
+
+    forall {gbar_nat = gbar_nat_vec.x(set_num)}
+    forsec "apic" gbar_nat = gbar_nat * gax_nat_vec.x(set_num)
+    Vhalf_nat     = Vhalf_nat_vec.x(set_num)           
+    vhh_shift_nat = vhh_shift_nat_vec.x(set_num)
+    vhhs_shift_nat = vhhs_shift_nat_vec.x(set_num)
+    vhm_ax_nat = vhm_ax_nat_vec.x(set_num)
+    forsec "apic" vh_shift_nat = vhm_ax_nat
+    taumod_nat     = taumod_nat_vec.x(set_num)          
+    forall {gbar_kv2_dr = gbar_kv2_dr_vec.x(set_num)}
+    forsec "apic" gbar_kv2_dr = gbar_kv2_dr * (gax_nat_vec.x(set_num) * gax_kv2_dr_vec.x(set_num))
+    Vhalf_kv2_dr     = Vhalf_kv2_dr_vec.x(set_num)        
+    taumod_kv2_dr     = taumod_kv2_dr_vec.x(set_num)       
+    forall{gbar_bk = gbar_bk_vec.x(set_num)}
+    Vhalf_bk     = Vhalf_bk_vec.x(set_num)        
+    taumod_bk     = taumod_bk_vec.x(set_num)       
+    apc_metap = apc_metap_vec.x(set_num)
+    fpc_metap = fpc_metap_vec.x(set_num)
+
+    xopen("metap.hoc")
+    xopen("spont.hoc")
+}
+

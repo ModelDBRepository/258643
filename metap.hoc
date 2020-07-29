@@ -1,0 +1,23 @@
+{ forall{ gbar_leak = 8.2614e-6 + ( fpc_metap*4.6171e-7 ) + ( apc_metap*-1.7433e-6 ) } }
+{ forall{ e_leak = -53.5298 + ( fpc_metap*1.2628 ) + ( apc_metap*-0.0235 ) } }
+{ forall{ gbar_hcn = 6.2623e-4 + ( fpc_metap*8.5069e-5 ) + ( apc_metap*-4.6584e-5 ) } }
+{ Vhalf_hcn = -91.8391 + ( fpc_metap*1.7262 ) + ( apc_metap*-0.7689 ) }
+{ forall{ ehcn_hcn = -43.5144 + ( fpc_metap*0.7051 ) + ( apc_metap*0.043 ) } }
+{ forall{ gbar_kv4_a = 3.3097e-4 + ( fpc_metap*-1.4913e-4 ) + ( apc_metap*-5.0513e-5 ) } }
+{ Vhalf_kv4_a = -41.5554 + ( fpc_metap*-1.6508 ) + ( apc_metap*-1.4362 ) }
+{ taumod_kv4_a = 1.0678 + ( fpc_metap*0.0039 ) + ( apc_metap*-0.0468 ) }
+{ forall{ gbar_kerg = 1.4206e-5 + ( fpc_metap*-6.9282e-6 ) + ( apc_metap*1.0936e-6 ) } }
+{ Vhalf_kerg = -3.0083 + ( fpc_metap*-1.7708 ) + ( apc_metap*0.316 ) }
+{ taumod_kerg = 1.0027 + ( fpc_metap*0.0065 ) + ( apc_metap*0.0052 ) }
+{ forall{ gbar_cat = 4.367e-5 + ( fpc_metap*5.8103e-7 ) + ( apc_metap*3.688e-6 ) } }
+{ Vhalf_cat = -39.8458 + ( fpc_metap*-0.0673 ) + ( apc_metap*-0.4578 ) }
+{ taumod_cat = 0.9926 + ( fpc_metap*-1.3393e-4 ) + ( apc_metap*-0.0098 ) }
+{ forall{ gbar_cal = 8.7178e-5 + ( fpc_metap*3.2184e-6 ) + ( apc_metap*1.8813e-6 ) } }
+{ Vhalf_cal = -48.3224 + ( fpc_metap*-0.6502 ) + ( apc_metap*0.2572 ) }
+{ taumod_cal = 1.0038 + ( fpc_metap*3.1581e-4 ) + ( apc_metap*0.0357 ) }
+{ kf_cal = 7.0282e-4 + ( fpc_metap*2.9805e-5 ) + ( apc_metap*3.3479e-5 ) }
+{ Pmax_cad = 0.0849 + ( fpc_metap*0.006 ) + ( apc_metap*0.0149 ) }
+{ beta_cad = 0.0573 + ( fpc_metap*0.0115 ) + ( apc_metap*-0.0253 ) }
+{ forall{ gbar_sk = 6.5016e-5 + ( fpc_metap*4.8377e-6 ) + ( apc_metap*-6.8056e-6 ) } }
+{ km_sk = 3.8027e-4 + ( fpc_metap*-1.2069e-4 ) + ( apc_metap*2.2853e-4 ) }
+

@@ -1,0 +1,16 @@
+Spontaneous firing rate (Hz)
+Spontaneous firing CV ISI 
+AP threshold (mV)
+AP amplitude (mV)
+AP width at half amplitude (ms)
+AP rise rate (10-90%) (mV/ms)
+AP fall rate (10-90%) (mV/ms)
+AHP depth from threshold (mV)
+AHP time to minimum (ms)
+Spike time during hyperpolarizing protocol (ms)
+Subthreshold oscillation frequency (Hz)
+Subtreshold oscillation frequency variance
+Subthreshold oscillation amplitude (mV)
+Subthreshold oscillation amplitude variance
+Input resistance (Mohm)
+Sag amplitude (mV)
