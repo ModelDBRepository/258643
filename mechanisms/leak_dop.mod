@@ -1,7 +1,6 @@
 NEURON {
 	SUFFIX leak
 	NONSPECIFIC_CURRENT i
-    EXTERNAL apc_metap, fpc_metap
 	RANGE i, e, g, gbar
 }
 

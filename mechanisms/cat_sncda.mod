@@ -26,7 +26,6 @@ NEURON {
 	SUFFIX cat
 	USEION ca READ eca,cai,cao WRITE ica
 	RANGE m, h, hs, gcat, gbar, ica
-    EXTERNAL apc_metap, fpc_metap
 	GLOBAL vhm, vhh, vhhs, km, kh, khs
     GLOBAL tm0, th0, ths0, vhtm, vhth, atm, ath, Ctm, Cth
 	RANGE minf, hinf, hsinf, mtau, htau, hstau

@@ -21,7 +21,6 @@ NEURON {
 	USEION k READ ek WRITE ik
     RANGE minf, tm, hinf, th, ik, th
     RANGE gbar
-    EXTERNAL apc_metap, fpc_metap
     GLOBAL Vhalf, taumod
     GLOBAL vhm, vcm
     GLOBAL vhh, vch

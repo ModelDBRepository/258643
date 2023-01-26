@@ -3,7 +3,6 @@ NEURON {
 	USEION ca READ eca,cai,cao WRITE ica
     RANGE  gbar, ica, g
     RANGE m, h, f
-    EXTERNAL apc_metap, fpc_metap
     GLOBAL kf, tauf
 	GLOBAL vhm, km, Ctm, tm0, vhtm, atm
     GLOBAL vhh, kh, th0
