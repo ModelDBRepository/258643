@@ -16,7 +16,6 @@ NEURON {
     USEION k READ ek WRITE ik
     RANGE gbar, oinf, n, ik
     GLOBAL km:, taumod
-    EXTERNAL apc_metap, fpc_metap
 }
 
 UNITS {

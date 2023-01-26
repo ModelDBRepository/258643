@@ -6,7 +6,6 @@ NEURON {
 	USEION ca READ cai, ica WRITE cai
 	GLOBAL Pmax, beta
 	RANGE cai_prime, CaCurr, CaDep
-    EXTERNAL apc_metap, fpc_metap
 }
 
 UNITS {

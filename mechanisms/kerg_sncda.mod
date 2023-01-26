@@ -17,7 +17,6 @@ NEURON {
 	USEION k READ ek WRITE ik
     RANGE o, i, ik
     RANGE gbar, alphaa, betaa, alphai, betai
-    EXTERNAL apc_metap, fpc_metap
     GLOBAL Vhalf, taumod
     GLOBAL vshift
     GLOBAL aa0, aac, ba0, bac
